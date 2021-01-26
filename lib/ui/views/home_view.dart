@@ -17,10 +17,16 @@ class HomeView extends StatelessWidget {
               obscureText: false,
               prefixIconData: Icons.email_outlined,
             ),
+            SizedBox(
+              height: 14.0,
+            ),
             TextFieldWidget(
               hintText: 'Password',
               obscureText: true,
               prefixIconData: Icons.lock_outlined,
+            ),
+            SizedBox(
+              height: 14.0,
             ),
           ],
         ),

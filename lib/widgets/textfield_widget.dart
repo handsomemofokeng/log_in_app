@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:log_in_app/ui/shared/globals.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final String hintText;
@@ -18,22 +19,37 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: onChanged,
+      obscureText: obscureText,
+      style: TextStyle(
+        color: Global.colorPrimary,
+        fontSize: 14.0,
+      ),
+      cursorColor: Global.colorPrimaryDark,
       decoration: InputDecoration(
-        hintText: hintText,
+        labelText: hintText,
         prefixIcon: Icon(
           prefixIconData,
           size: 18,
-          color: Colors.blue,
+          color: Global.colorPrimary,
         ),
         // filled: true,
-        enabledBorder: UnderlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.blueAccent),
+          borderSide: BorderSide(color: Global.colorPrimaryDark),
         ),
+
+        suffixIcon: Icon(
+          suffixIconData,
+          size: 18,
+          color: Global.colorPrimary,
+        ),
+        labelStyle: TextStyle(color: Global.colorPrimary),
+        focusColor: Global.colorPrimary,
       ),
     );
   }
