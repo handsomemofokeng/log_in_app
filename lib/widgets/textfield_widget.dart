@@ -23,7 +23,7 @@ class TextFieldWidget extends StatelessWidget {
       obscureText: obscureText,
       style: TextStyle(
         color: Global.colorPrimary,
-        fontSize: 14.0,
+        fontSize: 15.0,
       ),
       cursorColor: Global.colorPrimaryDark,
       decoration: InputDecoration(
@@ -36,7 +36,7 @@ class TextFieldWidget extends StatelessWidget {
         // filled: true,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: Global.colorPrimary),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
