@@ -8,7 +8,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(38.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[

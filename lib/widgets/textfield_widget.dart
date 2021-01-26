@@ -25,6 +25,15 @@ class TextFieldWidget extends StatelessWidget {
           size: 18,
           color: Colors.blue,
         ),
+        // filled: true,
+        enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.blueAccent),
+        ),
       ),
     );
   }
