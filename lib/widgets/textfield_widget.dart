@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:log_in_app/core/viewmodels/home_model.dart';
 import 'package:log_in_app/ui/shared/globals.dart';
+import 'package:provider/provider.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final String hintText;
@@ -18,6 +20,8 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<HomeModel>(context);
+
     return TextField(
       onChanged: onChanged,
       obscureText: obscureText,
@@ -43,10 +47,15 @@ class TextFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: Global.colorPrimaryDark),
         ),
 
-        suffixIcon: Icon(
-          suffixIconData,
-          size: 18,
-          color: Global.colorPrimary,
+        suffixIcon: GestureDetector(
+          onTap: () {
+            model.isVisible = !model.isVisible;
+          },
+          child: Icon(
+            suffixIconData,
+            size: 18,
+            color: Global.colorPrimary,
+          ),
         ),
         labelStyle: TextStyle(color: Global.colorPrimary),
         focusColor: Global.colorPrimary,
