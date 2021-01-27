@@ -17,7 +17,7 @@ class ButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           border: hasBorder
               ? Border.all(
-                  color: Global.colorPrimaryDark,
+                  color: Global.colorPrimary,
                   width: 1.0,
                 )
               : Border.fromBorderSide(BorderSide.none),
