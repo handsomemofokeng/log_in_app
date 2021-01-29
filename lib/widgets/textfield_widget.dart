@@ -40,11 +40,11 @@ class TextFieldWidget extends StatelessWidget {
         // filled: true,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Global.colorPrimary),
+          borderSide: BorderSide(color: Global.colorTextBorder),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Global.colorPrimaryDark),
+          borderSide: BorderSide(color: Global.colorPrimary),
         ),
 
         suffixIcon: GestureDetector(
