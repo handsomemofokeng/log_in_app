@@ -12,6 +12,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = Provider.of<HomeModel>(context);
     final size = MediaQuery.of(context).size;
+    final bool isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom > 0;
 
     return Scaffold(
       backgroundColor: Global.colorWhite,
@@ -21,8 +22,32 @@ class HomeView extends StatelessWidget {
             height: size.height - 200,
             color: Global.colorPrimaryDark,
           ),
-          WaveWidget(
-              size: size, yOffset: size.height / 3.0, color: Global.colorWhite),
+          AnimatedPositioned(
+            duration: Duration(milliseconds: 800),
+            curve: Curves.easeOutQuad,
+            top: isKeyboardOpen ? -size.height / 3.7 : 0.0,
+            child: WaveWidget(
+              size: size,
+              yOffset: size.height / 3.0,
+              color: Global.colorWhite,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 63.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Sign In',
+                  style: TextStyle(
+                    color: Global.colorWhite,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(28.0),
             child: Column(
@@ -60,14 +85,23 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 14.0),
-                ButtonWidget(
-                  title: 'Sign In',
-                  hasBorder: false,
-                ),
-                SizedBox(height: 10.0),
-                ButtonWidget(
-                  title: 'Register',
-                  hasBorder: true,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: ButtonWidget(
+                        title: 'Register',
+                        hasBorder: true,
+                      ),
+                    ),
+                    SizedBox(width: 10.0),
+                    Expanded(
+                      child: ButtonWidget(
+                        title: 'Sign In',
+                        hasBorder: false,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

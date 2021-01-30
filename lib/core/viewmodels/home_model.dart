@@ -16,13 +16,10 @@ class HomeModel extends ChangeNotifier {
 
   void isValidEmail(String email) {
     RegExp emailRegExp = new RegExp(
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
+        r'^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
 
-    if (emailRegExp.hasMatch(email)) {
-      _isValid = true;
-    } else {
-      _isValid = false;
-    }
+    _isValid = emailRegExp.hasMatch(email);
+
     notifyListeners();
   }
 }

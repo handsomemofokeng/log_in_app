@@ -14,7 +14,7 @@ class ButtonWidget extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
           color: hasBorder ? Global.colorWhite : Global.colorPrimaryDark,
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(25),
           border: hasBorder
               ? Border.all(
                   color: Global.colorPrimary,
@@ -24,7 +24,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () {},
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(25),
           child: Container(
             height: 60.0,
             child: Center(
