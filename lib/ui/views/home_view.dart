@@ -17,6 +17,10 @@ class HomeView extends StatelessWidget {
       backgroundColor: Global.colorWhite,
       body: Stack(
         children: [
+          Container(
+            height: size.height - 200,
+            color: Global.colorPrimaryDark,
+          ),
           WaveWidget(
               size: size, yOffset: size.height / 3.0, color: Global.colorWhite),
           Padding(
