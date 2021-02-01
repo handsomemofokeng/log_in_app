@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 63.0),
+            padding: const EdgeInsets.only(top: 100.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -84,7 +84,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 14.0),
+                SizedBox(height: 10.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
